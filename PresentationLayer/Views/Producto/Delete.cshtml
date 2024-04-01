@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+@model DataAccess.Producto
+<h2>@ViewData["Title"]</h2>
+
+<h3>¿Estás seguro que deseas eliminar este producto?</h3>
+
+<div>
+    <h4>Producto</h4>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+         <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+         <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id"/>
+        <input type="submit" value="Eliminar producto" class="btn btn-danger"/>
+        <a asp-action="Index" class="btn btn-dark">Cancelar</a>
+    </form>
+</div>
